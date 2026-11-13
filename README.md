@@ -7,6 +7,6 @@ The translucent body, blue base, twin circular sensors and animated eyes are rec
 - `src/pages/index.js`: scroll poses, palette and chapter copy
 - `src/components/Device.js`: CSS illustration and original photo
 - `src/styles/global.css`: responsive layout and visuals
-- `coffee-gadget.jpg`: user-supplied product photograph
+- The user-supplied photograph is embedded in `Device.js` as a compressed JPEG.
 
 Run `npm install && npm run develop`. Build with `npm run build`. GitHub Pages deploys from the existing Actions workflow. Honors reduced motion and uses no animation libraries.
