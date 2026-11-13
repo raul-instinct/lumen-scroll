@@ -4,12 +4,12 @@ import "../styles/global.css"
 
 // Each stage: scroll position (0..1) -> device pose + palette.
 const STAGES = [
-  { t: 0.0,  ry: -28, rx: 12, rz: 0,   s: 0.8,  x: 0,   hue: 232, l: 7,  glow: 0.35, eye: 0.3 },
-  { t: 0.2,  ry: 0,   rx: 0,  rz: 0,   s: 1.15, x: 18,   hue: 262, l: 9,  glow: 0.9,  eye: 1 },
-  { t: 0.4,  ry: 62,  rx: 8,  rz: 0,   s: 1.1,  x: -18,  hue: 190, l: 8,  glow: 0.6,  eye: 0.5 },
-  { t: 0.6,  ry: 180, rx: -12, rz: 8,  s: 1.25, x: 18, hue: 22,  l: 9,  glow: 0.8,  eye: 0.2 },
-  { t: 0.8,  ry: 300, rx: 22, rz: -6,  s: 1.5,  x: -18,   hue: 330, l: 10, glow: 1,    eye: 1 },
-  { t: 1.0,  ry: 360, rx: 0,  rz: 0,   s: 0.95, x: 0,   hue: 232, l: 7,  glow: 0.5,  eye: 0.6 },
+  { t: 0.0, ry: -22, rx: 8, rz: -3, s: 0.88, x: 0, hue: 226, l: 7, glow: 0.25, eye: 0.10 },
+  { t: 0.2, ry: 24, rx: 4, rz: 0, s: 1.00, x: -2, hue: 218, l: 8, glow: 0.70, eye: 0.35 },
+  { t: 0.4, ry: 0, rx: 0, rz: 0, s: 1.12, x: 0, hue: 193, l: 7, glow: 0.90, eye: 1.00 },
+  { t: 0.6, ry: -12, rx: 3, rz: -3, s: 1.02, x: 0, hue: 25, l: 9, glow: 0.80, eye: 1.00 },
+  { t: 0.8, ry: 42, rx: -8, rz: 3, s: 1.15, x: -2, hue: 233, l: 9, glow: 0.80, eye: 0.85 },
+  { t: 1.0, ry: 0, rx: 0, rz: 0, s: 1.00, x: 0, hue: 221, l: 7, glow: 0.40, eye: 1.00 },
 ]
 
 const ease = (u) => u * u * (3 - 2 * u)
@@ -26,12 +26,12 @@ function pose(p) {
 }
 
 const CHAPTERS = [
-  { id: "hero", kicker: "Orbit One", title: "קטן. שקט. חי.", body: "גאדג'ט דמיוני שגולל איתך. תמשיך לגלול." },
-  { id: "light", kicker: "01 · אור", title: "מסך שנושם.", body: "זכוכית אחת, בלי מסגרות. הלוח זוהר רק כשצריך, והעיניים של Orbit עוקבות אחריך." },
-  { id: "side", kicker: "02 · פרופיל", title: "דק מכל זווית.", body: "גוף אלומיניום אחד, 7.9 מ״מ. מסתובבים סביבו ורואים את כל הקצוות נסגרים בשקט." },
-  { id: "back", kicker: "03 · סוללה", title: "שבוע שלם.", body: "הצד האחורי מטעין אלחוטית. שבעה ימים על טעינה אחת, ושעה אחת עד מלא." },
-  { id: "zoom", kicker: "04 · קרוב", title: "כל פרט בפוקוס.", body: "הטבעת, הכפתור והזכוכית. מקרבים, והרקע משנה צבע בעקבות המוצר." },
-  { id: "end", kicker: "Orbit One", title: "הסיבוב הושלם.", body: "זו הדגמה של אפקט גלילה ב-GatsbyJS. המוצר בדוי, האפקט אמיתי." },
+  { id: "hero", kicker: "קפה עם אופי", title: "לפני הקפה,\nמישהו אומר היי.", body: "גאדג׳ט קטן ליד מכונת הקפה. שתי עיניים, חיישן קירבה וקבלת פנים שעושה חשק להתקרב.", cue: "גללו. הוא כבר מחכה לכם ↓" },
+  { id: "sense", kicker: "01 · מתקרבים", title: "יש מישהו\nבסביבה.", body: "חיישן הקירבה קולט שמישהו הגיע למכונת הקפה. מכאן מתחילה קבלת הפנים." },
+  { id: "awake", kicker: "02 · מתעוררים", title: "פתאום,\nיש כאן אופי.", body: "העיניים נפתחות. הגאדג׳ט הכחול־שקוף מקבל חיים, והפסקת הקפה מרגישה קצת אחרת." },
+  { id: "hello", kicker: "03 · אומרים שלום", title: "כל מי שמגיע,\nמקבל ברכה.", body: "לא צריך אירוע מיוחד. רק להגיע לשתות קפה. הוא כבר ידאג ל״היי״.", cue: "היי, זמן לקפה ☕ · ברכה לדוגמה" },
+  { id: "close", kicker: "04 · מקרוב", title: "כחול. שקוף.\nמלא אופי.", body: "הגוף השקוף, המסך עם העיניים וצמד העיגולים בחזית. העיצוב כאן מבוסס על הגאדג׳ט האמיתי של עומרי." },
+  { id: "end", kicker: "מהתמונה אל הגלילה", title: "אותה מכונה.\nיותר חיוך.", body: "זה המוצר האמיתי, ליד מכונת הקפה. הגלילה מספרת את הסיפור שלו.", cue: "הדמיה חזותית בלבד. האתר לא מפעיל את החומרה." },
 ]
 
 export default function IndexPage() {
@@ -69,16 +69,17 @@ export default function IndexPage() {
   }, [])
 
   return (
-    <main ref={root} className="page">
+    <main ref={root} className="page" data-chapter={active}>
       <div className="bg" aria-hidden="true"><div className="orb o1" /><div className="orb o2" /></div>
-      <header className="nav"><span>Orbit One</span><span className="pbar"><i /></span></header>
-      <div className="stage"><Device /></div>
+      <header className="nav"><span>קפה עם אופי <small>☕</small></span><span className="pbar"><i /></span></header>
+      <div className="stage"><Device active={active} /></div>
       {CHAPTERS.map((c, i) => (
-        <section key={c.id} className={"chapter" + (i === active ? " on" : "") + (i % 2 ? " alt" : "")} id={c.id}>
+        <section key={c.id} className={"chapter" + (i === active ? " on" : "") + ""} id={c.id}>
           <div className="copy">
             <p className="kicker">{c.kicker}</p>
             <h1>{c.title}</h1>
             <p className="body">{c.body}</p>
+            {c.cue && <p className="cue">{c.cue}</p>}
           </div>
         </section>
       ))}
@@ -86,4 +87,4 @@ export default function IndexPage() {
   )
 }
 
-export const Head = () => <><title>Orbit One - scroll demo</title><meta name="viewport" content="width=device-width, initial-scale=1" /></>
+export const Head = () => <><title>קפה עם אופי | הגאדג׳ט של עומרי</title><meta name="description" content="חיישן קירבה, שתי עיניים וברכה לכל מי שמגיע לשתות קפה. סיפור מוצר אינטראקטיבי בגלילה." /><meta name="viewport" content="width=device-width, initial-scale=1" /></>
