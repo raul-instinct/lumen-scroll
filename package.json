@@ -1,0 +1,1 @@
+{"name":"lumen-scroll-demo","version":"1.0.0","private":true,"scripts":{"develop":"gatsby develop","build":"gatsby build --prefix-paths","serve":"gatsby serve --prefix-paths"},"dependencies":{"gatsby":"^5.13.0","react":"^18.2.0","react-dom":"^18.2.0"}}
